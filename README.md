@@ -14,7 +14,7 @@ You may easily:
 
 Below is instruction how to use this application.
 
-![howToUse](images/Animation.gif)
+![howToUse](images/Animation1.gif)
 
 ## Used technologies
 - HTML
