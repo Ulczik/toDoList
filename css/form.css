@@ -23,6 +23,7 @@ border: 1px solid #eee;
 
 .form__button:hover{
     background-color: rgb(3, 138, 138);
+    cursor: pointer;
 }
 
 .form__button:active{
