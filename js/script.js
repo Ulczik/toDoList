@@ -12,9 +12,15 @@
     };
 
     const toggleTaskDone = (taskIndex) => {
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            {
+                ...tasks[taskIndex],
+                done: !tasks[taskIndex.done],
+            },
+            ...tasks.slice(taskIndex + 1),
+        ]
 
-
-        tasks[taskIndex].done = !tasks[taskIndex].done;
         render();
     };
 
@@ -23,6 +29,21 @@
             ...tasks,
             { content: newTaskContent },
         ];
+
+        render();
+    };
+
+    const markAllDone = () => {
+        tasks = tasks.map((task) => ({
+            ...task,
+            done: true,
+        }));
+
+        render();
+    };
+
+    const toggleHideDoneAll = () => {
+        hideDoneTasks = !hideDoneTasks;
         render();
     };
 
@@ -53,8 +74,7 @@
         for (const task of tasks) {
             tasksListHTMLContent += `
     <li
-     class="list__item js-task"
-     >
+     class="list__item ${task.done && hideDoneTasks ? " list__item--hidden" : ""} js-tasks">
       <button class="list__button list__button--toggleDone js-toggleDone">
         ${task.done ? "✓" : ""}
       </button>
