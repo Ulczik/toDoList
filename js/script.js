@@ -42,9 +42,10 @@
         render();
     };
 
-    const toggleHideDoneAll = () => {
+    const toggleHideDoneTasks = () => {
         hideDoneTasks = !hideDoneTasks;
         render();
+
     };
 
     const bindRemoveEvents = () => {
@@ -91,35 +92,46 @@
 
     const renderButtons = () => {
         const buttonsElement = document.querySelector(".js-buttons");
-        //jeśli nie ma zadań, to nic nie wyświetlaj//
-        if (!tasks.lenght) {
+
+        if (!tasks.length) {
             buttonsElement.innerHTML = "";
             return;
         }
 
-        //a jeśli są to wtedy//
-
         buttonsElement.innerHTML = `
-        <button class="buttons__button js-togglehideDoneTasks">
-        ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
-        </button>
-        <button class="buttons__button js-markAllDone"
-        ${tasks.every(({done}) => done) ? "disabled" : ""}>
-        Ukończ wszystkie
-        </button>
+            <button class="buttons__button js-toggleHideDoneTasks">
+                ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+            </button>
+            <button class="buttons__button js-markAllDone" 
+            ${tasks.every(({ done }) => done) ? "disabled" : ""}
+            >
+                Ukończ wszystkie
+            </button>
         `;
     };
 
+    const bindButtonsEvents = () => {
+        const markAllDoneButton = document.querySelector(".js-markAllDone");
+        //jeśli przycisk istnieje//
+        if (markAllDoneButton) {
+            //dodaję event listenera//
+            markAllDoneButton.addEventListener("click", markAllDone);
+        }
 
-    const bindButtonsEvents = () => { };
+        const toggleHideDoneButton = document.querySelector(".js-toggleHideDoneTasks");
+
+        if (toggleHideDoneButton) {
+            toggleHideDoneButton.addEventListener("click", toggleHideDoneTasks)
+        }
+    };
 
 
     const render = () => {
         renderTasks();
-        renderButtons();
-
         bindRemoveEvents();
         bindToggleDoneEvents();
+
+        renderButtons();
         bindButtonsEvents();
     };
 
