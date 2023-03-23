@@ -19,11 +19,14 @@ border: 1px solid #eee;
     background-color: teal;
     color: white;
     border: none;
+    padding: 10px;
+    transition: 0.5s linear;
 }
 
 .form__button:hover{
     background-color: rgb(3, 138, 138);
     cursor: pointer;
+    transform: scale(1.03);
 }
 
 .form__button:active{
