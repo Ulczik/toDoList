@@ -14,7 +14,7 @@ You may easily:
 
 Below is instruction how to use this application.
 
-![howToUse](images/Animation1.gif)
+![howToUse](images/Animation2.gif)
 
 ## Used technologies
 - HTML
@@ -23,5 +23,5 @@ Below is instruction how to use this application.
 - JavaScript ES6+	
 
 ## Features
-- Grid layouts
+- Grid & flex layouts
 - Media queries
