@@ -1,21 +1,21 @@
-.form{
+.form {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-gap: 20px;
 }
 
-@media (max-width: 767px){
-.form{
-    grid-template-columns: 1fr;
-}
-}
-
-.form__imput{
-padding: 10px;
-border: 1px solid #eee;
+@media (max-width: 767px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
 }
 
-.form__button{
+.form__imput {
+    padding: 10px;
+    border: 1px solid #eee;
+}
+
+.form__button {
     background-color: teal;
     color: white;
     border: none;
@@ -23,12 +23,12 @@ border: 1px solid #eee;
     transition: 0.5s linear;
 }
 
-.form__button:hover{
+.form__button:hover {
     background-color: rgb(3, 138, 138);
     cursor: pointer;
     transform: scale(1.03);
 }
 
-.form__button:active{
+.form__button:active {
     background-color: rgb(2, 153, 153);
 }
