@@ -16,7 +16,7 @@
             ...tasks.slice(0, taskIndex),
             {
                 ...tasks[taskIndex],
-                done: !tasks[taskIndex.done],
+                done: !tasks[taskIndex].done,
             },
             ...tasks.slice(taskIndex + 1),
         ]
@@ -44,8 +44,8 @@
 
     const toggleHideDoneTasks = () => {
         hideDoneTasks = !hideDoneTasks;
-        render();
 
+        render();
     };
 
     const bindRemoveEvents = () => {
@@ -76,13 +76,13 @@
             tasksListHTMLContent += `
     <li
      class="list__item ${task.done && hideDoneTasks ? " list__item--hidden" : ""} js-tasks">
-      <button class="list__button list__button--toggleDone js-toggleDone">
-        ${task.done ? "✓" : ""}
-      </button>
+        <button class="list__button list__button--toggleDone js-toggleDone">
+          ${task.done ? "✓" : ""}
+        </button>
       <span class="list__item${task.done ? " list__item--done" : ""}">${task.content}</span>
-      <button class="list__button list__button--remove js-remove">
-        🗑
-     </button>
+        <button class="list__button list__button--remove js-remove">
+          🗑
+        </button>
     </li>
      `;
         }
