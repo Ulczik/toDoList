@@ -74,17 +74,17 @@
 
         for (const task of tasks) {
             tasksListHTMLContent += `
-    <li
-     class="list__item ${task.done && hideDoneTasks ? " list__item--hidden" : ""} js-tasks">
-        <button class="list__button list__button--toggleDone js-toggleDone">
-          ${task.done ? "✓" : ""}
-        </button>
-      <span class="list__item${task.done ? " list__item--done" : ""}">${task.content}</span>
-        <button class="list__button list__button--remove js-remove">
-          🗑
-        </button>
-    </li>
-     `;
+             <li
+               class="list__item ${task.done && hideDoneTasks ? " list__item--hidden" : ""} js-tasks">
+                 <button class="list__button list__button--toggleDone js-toggleDone">
+                    ${task.done ? "✓" : ""}
+                 </button>
+                   <span class="list__item${task.done ? " list__item--done" : ""}">${task.content}</span>
+                 <button class="list__button list__button--remove js-remove">
+                    🗑
+                </button>
+            </li>
+         `;
         }
 
         document.querySelector(".js-tasks").innerHTML = tasksListHTMLContent;
@@ -112,9 +112,8 @@
 
     const bindButtonsEvents = () => {
         const markAllDoneButton = document.querySelector(".js-markAllDone");
-        //jeśli przycisk istnieje//
+
         if (markAllDoneButton) {
-            //dodaję event listenera//
             markAllDoneButton.addEventListener("click", markAllDone);
         }
 
