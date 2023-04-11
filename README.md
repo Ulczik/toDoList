@@ -4,7 +4,7 @@ This repository presents **handy check list**.
 ## Demo
 https://ulczik.github.io/toDoList/
 
-## Descripttion
+## Description
 Now you wont forget what you have to do with this simple tasks list.
 
 You may easily:
